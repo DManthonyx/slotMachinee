@@ -9,6 +9,24 @@
 </head>
 <body>
     <div class="container">
+        <div class="simpleModal modal">
+            <div class="modalContent">
+                <div class="modalHeader">
+                    <h1>WELCOME TO JACK POT</h1>
+                </div>
+                <div class="divForm">
+                    <form>
+                        <input type="text" placeholder="FIRST NAME" required="required">
+                        <input type="text" placeholder="LAST NAME" required="required">
+                        <input type="password" placeholder="password" required="required">
+                        <input type="password" placeholder="re-peat password" required="required">
+                        <input type="text" placeholder="CREDIT CARD NUMBER">
+                        <button class="submit">SUBMIT</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
         <header>
             <h1>JACKPOT</h1>
         </header>
@@ -42,11 +60,16 @@
         </main>
         <footer>
             <div>
-                <h2>MONEY</h2>
+                <h2 class="money">$</h2>
             </div>
         </footer>
     </div>
-
+<audio>
+    <source class="handle" src="audio/handle.wav" type="audio/wav">
+</audio>
+<audio>
+    <source class="payout" src="audio/slot2.wav" type="audio/wav">
+</audio>
 <script src="js/app.js"></script>    
 </body>
 </html>
