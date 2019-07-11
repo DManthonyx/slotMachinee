@@ -1,3 +1,6 @@
+html {
+    height: 100%;
+}
 * {
     margin: 0px;
     padding: 0px;
@@ -5,12 +8,14 @@
 
 body {
     background: black;
+    height: 100%;
 }
 
 .container {
     margin: 10px;
     background: black;
     box-shadow: 0px 0px 30px red;
+    height: 100%;
 
 }
 
@@ -27,6 +32,7 @@ body {
     overflow: auto;
     background: rgba(0,0,0,0.5);
 }
+
 .modalContent {
     background: #fecf76;
     margin: 6% auto;
@@ -36,6 +42,10 @@ body {
     box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.2);
     animation-name: modalOpen;
     animation-duration: 1s;
+}
+
+.modal p {
+    text-align: center;
 }
 
 .closeBtn {
@@ -60,7 +70,7 @@ form {
     align-items: center;
 }
 
-input, .submit {
+input, .submitBtn {
     text-align: center;
     width: 50%;
     color: black;
@@ -72,11 +82,25 @@ input, .submit {
     margin-bottom: 5px;
     background: rgba(0,0,0,0);
 }
-input:hover, .submit:hover {
+
+input:hover, .submitBtn:hover {
     box-shadow: 0 0 5px #d8101d;
 } 
 
+.okayBtn {
+    width: 100%;
+    height: 23px;
+    border: 0;
+    border-radius: 5px;
+    background: #d8101d;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-top: 2px;
+}
 
+li {
+    margin: 5px;
+}
 
 header {
     text-align: center;
@@ -113,21 +137,20 @@ aside {
     justify-content: space-around;
 }
 
-.light_bulb {
+.lightBulb {
     width: 80px;
     height: 80px;
     border: 0px;
     border-radius: 100%;
     background: #fecf76;
     box-shadow: 0px 0px 20px yellow;
-
 }
 
-.slot_machine_img {
+.slotMachineImg {
     width: 450px;
 }
 
-.slot_machine {
+.slotMachine {
     display: flex;
     justify-content: space-around;
     width: 244px;
@@ -137,24 +160,20 @@ aside {
     right: 2px;
 }
 
-.slot_holder {
+.slotHolder {
     width: 53px;
     height: 73px;
     border: 2px solid;
     border-radius: 2px;
 }
 
-.btn_div {
+.divBtn {
     position: relative;
     bottom: 184px;
     left: 7px;
     width: 407px;
     display: flex;
     justify-content: space-around;
-}
-
-.btn_money {
-
 }
 
 .twenty {
@@ -184,7 +203,7 @@ aside {
     transform: skewX(-13deg);
 }
 
-.btn_play {
+.playBtn {
     width: 62px;
     border-radius: 50%;
     color: #c53a00db;
@@ -216,12 +235,50 @@ footer h2 {
     margin-left: 5px;
 }
 
+button:hover {
+    box-shadow: 0 0 10px #bb020b;
+}
 
-/*  ANIMATIONS  */
+ /*   ANIMATION CLASSES   */
+
+ .flashLight {
+    animation-name: flashLights;
+    animation-duration: .2s;
+    animation-iteration-count: 40;
+}
+
+.shakeMachine {
+    animation-name: shakeMachine;
+    animation-duration: .5s;
+    animation-iteration-count: 2;
+}
+
+
+/*  KEY FRAMES  */
 
 @keyframes modalOpen {
     from {opacity: 0;}
     to {opacity: 1;}
+}
+
+@keyframes shakeMachine {
+    0% {transform: rotate(10deg)}
+    25% {transform: rotate(-10deg)}
+    50% {transform: rotate(10deg)}
+    75% {transform: rotate(-10deg)}
+    100% {transform: rotate(10deg)}
+    
+}
+
+@keyframes flashLights {
+    from {
+        background: #fecf76;
+        box-shadow: 0px 0px 20px yellow;
+    }
+    to{
+        background: #f5f2b1;
+        box-shadow: 0px 0px 40px yellow;
+    }
 }
 
 /*   media querys  */

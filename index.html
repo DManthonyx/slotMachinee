@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="simpleModal modal">
+        <div class="modal">
             <div class="modalContent">
                 <div class="modalHeader">
                     <h1>WELCOME TO JACK POT</h1>
@@ -18,13 +18,41 @@
                     <form>
                         <input type="text" placeholder="FIRST NAME" required="required">
                         <input type="text" placeholder="LAST NAME" required="required">
-                        <input type="password" placeholder="password" required="required">
-                        <input type="password" placeholder="re-peat password" required="required">
-                        <input type="text" placeholder="CREDIT CARD NUMBER">
-                        <button class="submit">SUBMIT</button>
+                        <input class="password" type="password" placeholder="PASSWORD" required="required">
+                        <input class="password" type="password" placeholder="PASSWORD" required="required">
+                        <input class="addMoney" type="text" placeholder="MONEY" required="required">
+                        <input type="text" placeholder="CREDIT CARD NUMBER" required="required">
+                        <button class="submitBtn">SUBMIT</button>
                     </form>
                 </div>
-
+            </div>            
+        </div>
+        <div class="modal">
+            <div class="modalContent">
+                <div class="modalHeader">
+                    <h1>INSTRUCTIONS</h1>
+                </div>
+                <div class="instructions">
+                    <ul>
+                        <li>It cost two dollars to play</li>
+                        <li>You have the options to choose 20,50 or 100. You can also switch at any given moment</li>
+                        <li>20 being the easiet and 100 being hardest</li>
+                        <li>If you get all BARS on each row you recieve double</li>
+                        <li>If you recieve one bar and two of the same fruit than you recieve only half</li>
+                        <li>If you recive all the same fruits than you recieve a regualr payout</li>
+                    </ul>
+                    <button class="okayBtn">OKAY</button>
+                </div>
+            </div>
+        </div>
+        <div class="modal">
+            <div class="modalContent">
+                <p>Sorry you have no more money! <br > To continue to play add more money</p>
+                <form>
+                    <input class="addMoney" type="text" placeholder="money" required="required">
+                    <input type="text" placeholder="CREDIT CARD NUMBER">
+                </form>
+                <button class="okayBtn addMoreMoneyBtn">ADD</button>
             </div>
         </div>
         <header>
@@ -32,30 +60,30 @@
         </header>
         <main>
             <aside>
-                <div class="light_bulb"></div>
-                <div class="light_bulb"></div>
-                <div class="light_bulb"></div>
+                <div class="lightBulb"></div>
+                <div class="lightBulb"></div>
+                <div class="lightBulb"></div>
             </aside>
             <article>
-                <img src="images/slotmachine.png" class="slot_machine_img">
-                <div class="slot_machine">
-                    <img id="wheel1" class="slot_holder" src="images/bar.png">
-                    <img id="wheel2" class="slot_holder" src="images/bar.png">
-                    <img id="wheel3" class="slot_holder" src="images/bar.png">
+                <img src="images/slotmachine.png" class="slotMachineImg">
+                <div class="slotMachine">
+                    <img id="wheel1" class="slotHolder" src="images/bar.png">
+                    <img id="wheel2" class="slotHolder" src="images/bar.png">
+                    <img id="wheel3" class="slotHolder" src="images/bar.png">
                 </div>
-                <div class="btn_div">
-                    <div class="btn_money">
+                <div class="divBtn">
+                    <div class="moneyBtn">
                         <button class="twenty">20</button>
                         <button class="fifty">50</button>
                         <button class="hundred">100</button>
                     </div>
-                    <button class="btn_play">PLAY</button>
+                    <button class="playBtn">PLAY</button>
                 </div>
             </article>
             <aside>
-                <div class="light_bulb"></div>
-                <div class="light_bulb"></div>
-                <div class="light_bulb"></div>
+                <div class="lightBulb"></div>
+                <div class="lightBulb"></div>
+                <div class="lightBulb"></div>
             </aside>
         </main>
         <footer>
