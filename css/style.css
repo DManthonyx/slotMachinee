@@ -33,8 +33,8 @@ body {
     background: rgba(0,0,0,0.5);
 }
 
-.modalContent {
-    background: #fecf76;
+.modal-content {
+    background: white;
     margin: 6% auto;
     padding: 20px;
     width: 40%;
@@ -48,18 +48,7 @@ body {
     text-align: center;
 }
 
-.closeBtn {
-    color: #ccc;
-    float: right;
-    font-size: 30px;
-}
-.closeBtn:hover,.clsoeBtn:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.modalHeader {
+.modal-header {
     text-align: center;
     color: #d8101d;
 }
@@ -70,7 +59,7 @@ form {
     align-items: center;
 }
 
-input, .submitBtn {
+input, .submit-btn {
     text-align: center;
     width: 50%;
     color: black;
@@ -83,11 +72,11 @@ input, .submitBtn {
     background: rgba(0,0,0,0);
 }
 
-input:hover, .submitBtn:hover {
+input:hover, .submit-btn:hover {
     box-shadow: 0 0 5px #d8101d;
 } 
 
-.okayBtn {
+.okay-btn {
     width: 100%;
     height: 23px;
     border: 0;
@@ -137,7 +126,7 @@ aside {
     justify-content: space-around;
 }
 
-.lightBulb {
+.light-bulb {
     width: 80px;
     height: 80px;
     border: 0px;
@@ -146,11 +135,11 @@ aside {
     box-shadow: 0px 0px 20px yellow;
 }
 
-.slotMachineImg {
+.slot-machine-img {
     width: 450px;
 }
 
-.slotMachine {
+.slot-machine {
     display: flex;
     justify-content: space-around;
     width: 244px;
@@ -160,14 +149,14 @@ aside {
     right: 2px;
 }
 
-.slotHolder {
+.slot-holder {
     width: 53px;
     height: 73px;
     border: 2px solid;
     border-radius: 2px;
 }
 
-.divBtn {
+.div-btn {
     position: relative;
     bottom: 184px;
     left: 7px;
@@ -203,7 +192,7 @@ aside {
     transform: skewX(-13deg);
 }
 
-.playBtn {
+.play-btn {
     width: 62px;
     border-radius: 50%;
     color: #c53a00db;
@@ -241,13 +230,13 @@ button:hover {
 
  /*   ANIMATION CLASSES   */
 
- .flashLight {
+ .flash-light {
     animation-name: flashLights;
     animation-duration: .2s;
     animation-iteration-count: 40;
 }
 
-.shakeMachine {
+.shake-machine {
     animation-name: shakeMachine;
     animation-duration: .5s;
     animation-iteration-count: 2;

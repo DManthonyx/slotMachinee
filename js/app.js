@@ -1,36 +1,37 @@
-// grab slot machine
+// grab slot machine elements
 const shakeMachine = document.querySelector('article');
 const wheel1 = document.querySelector('#wheel1');
 const wheel2 = document.querySelector('#wheel2');
 const wheel3 = document.querySelector('#wheel3');
-const lightBulb = document.querySelectorAll('.lightBulb');
-const wheel = document.querySelectorAll('.slotHolder');
+const lightBulb = document.querySelectorAll('.light-bulb');
+const wheel = document.querySelectorAll('.slot-holder');
 const money = document.querySelector('.money');
 
-// grab model
+// grab model elements
 const modalForm = document.getElementsByClassName('modal')[0];
 const modalInfo = document.getElementsByClassName('modal')[1];
 const modalNoMoney = document.getElementsByClassName('modal')[2];
 
-// grab button
-const playBtn = document.querySelector('.playBtn');
-const moneyBtn = document.querySelector('.moneyBtn');
-const modalBtn = document.querySelector('.modalBtn');
-const closeBtn = document.querySelector('.closeBtn');
-const submitBtn = document.querySelector('.submitBtn');
-const input = document.querySelectorAll('input');
-const okayBtn = document.querySelector('.okayBtn');
-const addMoreMoneyBtn = document.querySelector('.addMoreMoneyBtn');
+// grab button elements
+const submitBtn = document.querySelector('.submit-btn')
+const playBtn = document.querySelector('.play-btn');
+const moneyBtn = document.querySelector('.money-btn');
+const okayBtn = document.querySelector('.okay-btn');
+const addMoreMoneyBtn = document.querySelector('.add-more-money-btn');
 
-// grab audio
+// input elements
+const input = document.querySelectorAll('div-form input');
+const credit = document.querySelectorAll('.credit');
+
+// grab audio elements
 const handle = new Audio('audio/payout2.wav');
 const payOut = new Audio('audio/slot2.wav');
 
-// grab money
-const addMoney = document.querySelectorAll('.addMoney')[0];
-const addMoney1 = document.querySelectorAll('.addMoney')[1];
+// grab money elements
+const addMoney = document.querySelectorAll('.add-money')[0];
+const addMoney1 = document.querySelectorAll('.add-money')[1];
 
-// slot images
+// slot images array
 const fruit = ['images/apple.png', 'images/banana.png', 'images/cherry.png', 'images/grape.png', 'images/orange.png', 'images/bar.png', 'images/watermelon.png', 'images/lemon.png'];
 
 // button disabled
@@ -85,15 +86,6 @@ const slotMachine = {
         }
     },
 
-    checkInput() {
-        const password = document.querySelectorAll('.password')[0].value;
-        const passwordRepeat = document.querySelectorAll('.password')[1].value;
-        while(password.length != passwordRepeat.length) {
-            submit.disabled = true;
-        }
-        
-    },
-
     showNoMoney() {
         modalNoMoney.style.display = 'block'; 
     },
@@ -108,42 +100,7 @@ const slotMachine = {
     }
 }
 
-// functions
-const clickOutSide = (e) => {
-    if (e.target == modalForm) {
-    modalForm.style.display = 'none';
-    }
-}
-
 // event handlers
-window.addEventListener('click', clickOutSide)
-
-// submit form
-submitBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    const password = document.querySelectorAll('.password')[0].value;
-        const passwordRepeat = document.querySelectorAll('.password')[1].value;
-        if(password.length !== passwordRepeat.length) {
-            submit.disabled = true;
-        }
-    slotMachine.addMoneyForm(); 
-    modalForm.style.display = 'none';   
-})
-
-// play game
-playBtn.addEventListener('click', () => {
-    if(slotMachine.money === 0) {
-        return slotMachine.showNoMoney();
-    }
-    slotMachine.play();
-    handle.play();
-    shakeMachine.classList.add('shakeMachine');
-    lightBulb.forEach(l => l.classList.add('flashLight'))
-    setTimeout(() => {
-        shakeMachine.classList.remove('shakeMachine');
-        lightBulb.forEach(l => l.classList.remove('flashLight'))
-    }, 8000)
-})
 
 // display INSTRUCTIONS
 window.onload = function() {
@@ -154,6 +111,20 @@ window.onload = function() {
 okayBtn.addEventListener('click', () => {
     modalInfo.style.display = 'none';
     modalForm.style.display = 'block';
+})
+
+// submit form
+submitBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const password = document.querySelector('.password').value;
+    const passwordRepeat = document.querySelector('.password-repeat').value;
+    password !== passwordRepeat ? submitBtn.disabled = true : submitBtn.disabled = false;
+    input.forEach((i) => {
+        i.value === '' ? submitBtn.disabled = true : submitBtn.disabled = false;
+    })
+    credit.length === 19 ? submitBtn.disabled = true : submitBtn.disabled = false;
+    slotMachine.addMoneyForm(); 
+    modalForm.style.display = 'none';   
 })
 
 // chose play OPTIONS
@@ -172,8 +143,24 @@ moneyBtn.addEventListener('click', (e) => {
     return slotMachine.credit
 })
 
+// play game
+playBtn.addEventListener('click', () => {
+    if(slotMachine.money === 0) {
+        return slotMachine.showNoMoney();
+    }
+    slotMachine.play();
+    handle.play();
+    shakeMachine.classList.add('shake-machine');
+    lightBulb.forEach(l => l.classList.add('flash-light'))
+    setTimeout(() => {
+        shakeMachine.classList.remove('shake-machine');
+        lightBulb.forEach(l => l.classList.remove('flash-light'))
+    }, 8000)
+})
+
 // add money again when out of money
 addMoreMoneyBtn.addEventListener('click', () => {
     slotMachine.addMoneyAgain();
+    addMoney1.value = '';
     modalNoMoney.style.display = 'none';
 })
