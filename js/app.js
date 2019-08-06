@@ -70,14 +70,14 @@ const slotMachine = {
         const val2 = wheel2.getAttribute('src');
         const val3 = wheel3.getAttribute('src');
         if (val1 === val2 && val1 === val3) {
-            if(val1 === fruit[6] && val2 === fruit[6] && val3 === fruit[6]) {
+            if(val1 === fruit[5] && val2 === fruit[5] && val3 === fruit[5]) {
                 money.textContent = `$${this.money +=  this.bet * 2}`
                 payOut.play();
             } else {
                 money.textContent = `$${this.money += this.bet}`
                 payOut.play();
             }
-        } else if((val1 === fruit[6] && val3 === val2) || (val2 === fruit[6] && val1 === val3) || (val3 === fruit[6] && val2 === val1)) {
+        } else if((val1 === fruit[5] && val3 === val2) || (val2 === fruit[5] && val1 === val3) || (val3 === fruit[5] && val2 === val1)) {
                 money.textContent = `$${this.money += this.bet / 2}`
                 payOut.play();
         } 
